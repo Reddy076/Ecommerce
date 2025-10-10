@@ -1,14 +1,14 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 
 import { useEffect, useState } from 'react';
 
-import { HomePage } from './Pages/HomePage';
+import { HomePage } from './Pages/home/HomePage';
 
 import axios from 'axios';
 
-import { CheckoutPage } from './Pages/CheckoutPage';
+import { CheckoutPage } from './Pages/checkout/CheckoutPage';
 
-import { OrdersPage } from './Pages/OrdersPage';
+import { OrdersPage } from './Pages/orders/OrdersPage';
 
 import { TrackingPage } from './Pages/TrackingPage';
 
