@@ -4,31 +4,27 @@ import { Header } from '../components/Header';
 
 import './HomePage.css';
 
-export function HomePage() {
+export function HomePage({ cart }) {
 
-  const [products, setProducts]=useState([]);
-  const [cart, setCart]=useState([]);
+  const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
+
+  useEffect(() => {
     axios.get('/api/products')
-  .then((response)=>{
-      setProducts(response.data)
-    });
-    axios.get('/api/cart-items')
-    .then((response)=>{
-      console.log(response.data);
-      setCart(response.data);
-    });
-  },[]);
+      .then((response) => {
+        setProducts(response.data)
+      });
 
-  
+  }, []);
+
+
 
   return (
 
     <>
       <title>Ecommerce</title>
 
-      <Header cart={cart}/>
+      <Header cart={cart} />
       <div className="home-page">
         <div className="products-grid">
           {products.map((product) => {
@@ -45,7 +41,7 @@ export function HomePage() {
 
                 <div className="product-rating-container">
                   <img className="product-rating-stars"
-                    src={`images/ratings/rating-${product.rating.stars * 10}.png` }/>
+                    src={`images/ratings/rating-${product.rating.stars * 10}.png`} />
                   <div className="product-rating-count link-primary">
                     {product.rating.count}
                   </div>
@@ -83,7 +79,7 @@ export function HomePage() {
               </div>
             )
           })}
- 
+
         </div>
       </div>
     </>
