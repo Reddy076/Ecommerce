@@ -12,6 +12,7 @@ A modern ecommerce web application built with React, Vite, and Node.js/Express b
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
 - [Development](#development)
+- [Deployment](#deployment)
 - [Testing](#testing)
 - [API Endpoints](#api-endpoints)
 - [Folder Structure](#folder-structure)
@@ -131,6 +132,46 @@ Backend follows MVC pattern:
 - `/routes` - Request handlers
 - `/models` - Database models
 - `/controllers` - Business logic (embedded in routes)
+
+## Deployment
+
+### Building for Production
+
+To create a production build of the frontend:
+
+```bash
+npm run build
+```
+
+This command will:
+1. Bundle and optimize all JavaScript, CSS, and assets
+2. Output the production build to the `../ecommerce-backend/dist` directory
+3. Create a self-contained, optimized version of the application
+
+### Previewing the Production Build
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Note: This requires the production build to be created first with `npm run build`.
+
+### Deployment Process
+
+1. Build the frontend:
+   ```bash
+   npm run build
+   ```
+
+2. Deploy the backend server which will automatically serve the frontend:
+   ```bash
+   cd ../ecommerce-backend
+   npm start
+   ```
+
+The application will be available on the configured port (default: 3000).
 
 ## Testing
 

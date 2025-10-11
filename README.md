@@ -10,6 +10,7 @@ A complete ecommerce solution with a React frontend and Node.js/Express backend.
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Development Workflow](#development-workflow)
+- [Deployment](#deployment)
 - [API Documentation](#api-documentation)
 - [Testing](#testing)
 
@@ -138,6 +139,64 @@ Backend:
 - `routes/` - API endpoint handlers
 - `models/` - Database models
 - `defaultData/` - Seed data for initial database population
+
+## Deployment
+
+### Building for Production
+
+1. Build the frontend application:
+   ```bash
+   cd Ecommerce-Demo
+   npm run build
+   ```
+   This will create a production-ready build in the `ecommerce-backend/dist` directory.
+
+2. Start the backend server in production mode:
+   ```bash
+   cd ../ecommerce-backend
+   npm start
+   ```
+
+The application will be served on port 3000 by default. The backend server serves both the API endpoints and the frontend static files.
+
+### Environment Variables
+
+For production deployment, you can configure the following environment variables:
+
+- `PORT` - Port for the server to listen on (default: 3000)
+
+Example `.env` file:
+```env
+PORT=8080
+```
+
+### Deploying to Cloud Platforms
+
+#### Heroku
+1. Create a new Heroku app
+2. Set the buildpack to Node.js
+3. Add the following to your `package.json` in the backend directory:
+   ```json
+   "engines": {
+     "node": "18.x"
+   }
+   ```
+4. Deploy using Git:
+   ```bash
+   git push heroku main
+   ```
+
+#### Render
+1. Create a new web service
+2. Connect your GitHub repository
+3. Set the build command to:
+   ```bash
+   cd Ecommerce-Demo && npm install && npm run build
+   ```
+4. Set the start command to:
+   ```bash
+   cd ecommerce-backend && npm install && npm start
+   ```
 
 ## API Documentation
 
