@@ -13,6 +13,7 @@ A modern ecommerce web application built with React, Vite, and Node.js/Express b
   - [Running the Application](#running-the-application)
 - [Development](#development)
 - [Deployment](#deployment)
+- [Live Demo](#live-demo)
 - [Testing](#testing)
 - [API Endpoints](#api-endpoints)
 - [Folder Structure](#folder-structure)
@@ -172,6 +173,11 @@ Note: This requires the production build to be created first with `npm run build
    ```
 
 The application will be available on the configured port (default: 3000).
+
+## Live Demo
+
+You can access the live demo of the application at:
+[http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/](http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/)
 
 ## Testing
 

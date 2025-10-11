@@ -11,6 +11,7 @@ A complete ecommerce solution with a React frontend and Node.js/Express backend.
 - [Getting Started](#getting-started)
 - [Development Workflow](#development-workflow)
 - [Deployment](#deployment)
+- [Live Demo](#live-demo)
 - [API Documentation](#api-documentation)
 - [Testing](#testing)
 
@@ -197,6 +198,11 @@ PORT=8080
    ```bash
    cd ecommerce-backend && npm install && npm start
    ```
+
+## Live Demo
+
+You can access the live demo of the application at:
+[http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/](http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/)
 
 ## API Documentation
 

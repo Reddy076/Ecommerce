@@ -13,6 +13,7 @@ Express.js backend server for the Ecommerce Demo application. Provides RESTful A
   - [Installation](#installation)
   - [Running the Server](#running-the-server)
 - [Deployment](#deployment)
+- [Live Demo](#live-demo)
 - [Development](#development)
 - [Project Structure](#project-structure)
 
@@ -158,6 +159,11 @@ PORT=8080
    ```bash
    npm start
    ```
+
+## Live Demo
+
+You can access the live demo of the application at:
+[http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/](http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/)
 
 ## Development
 
