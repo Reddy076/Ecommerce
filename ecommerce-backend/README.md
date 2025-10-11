@@ -110,6 +110,22 @@ npm run build
 
 This will create a production-ready build in the `dist` directory, which is automatically served by the backend server.
 
+### Deploying to AWS Elastic Beanstalk
+
+1. Ensure the frontend is built (as described above)
+2. Create a zip file of the backend directory (which now includes the frontend build):
+   ```bash
+   zip -r ecommerce-app.zip . -x "node_modules/*" "dist/assets/*.map" "*.git*"
+   ```
+   
+3. Go to the AWS Elastic Beanstalk console
+4. Create a new application
+5. Choose Node.js as the platform
+6. Upload the zip file created in step 2
+7. Configure environment variables if needed:
+   - `PORT` - Set to 8080 (Elastic Beanstalk's default port)
+8. Deploy the application
+
 ### Production Deployment
 
 1. Ensure the frontend is built (as described above)
@@ -130,35 +146,6 @@ Example `.env` file:
 ```env
 PORT=8080
 ```
-
-### Deploying to Cloud Platforms
-
-#### Heroku
-1. Create a new Heroku app
-2. Set the buildpack to Node.js
-3. Add the following to your `package.json`:
-   ```json
-   "engines": {
-     "node": "18.x"
-   }
-   ```
-4. Deploy using Git:
-   ```bash
-   git push heroku main
-   ```
-
-#### Render
-1. Create a new web service
-2. Connect your GitHub repository
-3. Set the root directory to `ecommerce-backend`
-4. Set the build command to:
-   ```bash
-   cd ../Ecommerce-Demo && npm install && npm run build
-   ```
-5. Set the start command to:
-   ```bash
-   npm start
-   ```
 
 ## Live Demo
 

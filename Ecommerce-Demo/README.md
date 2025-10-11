@@ -149,6 +149,29 @@ This command will:
 2. Output the production build to the `../ecommerce-backend/dist` directory
 3. Create a self-contained, optimized version of the application
 
+### Deploying to AWS Elastic Beanstalk
+
+The application is designed to be deployed as a single unit to AWS Elastic Beanstalk. The deployment process involves:
+
+1. Build the frontend:
+   ```bash
+   npm run build
+   ```
+
+2. Create a zip file of the backend directory (from the backend directory):
+   ```bash
+   cd ../ecommerce-backend
+   zip -r ecommerce-app.zip . -x "node_modules/*" "dist/assets/*.map" "*.git*"
+   ```
+
+3. Upload the zip file to AWS Elastic Beanstalk:
+   - Go to the AWS Elastic Beanstalk console
+   - Create a new application
+   - Choose Node.js as the platform
+   - Upload the zip file
+   - Configure environment variables if needed
+   - Deploy the application
+
 ### Previewing the Production Build
 
 To preview the production build locally:

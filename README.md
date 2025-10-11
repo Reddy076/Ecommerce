@@ -171,33 +171,29 @@ Example `.env` file:
 PORT=8080
 ```
 
-### Deploying to Cloud Platforms
+### Deploying to AWS Elastic Beanstalk
 
-#### Heroku
-1. Create a new Heroku app
-2. Set the buildpack to Node.js
-3. Add the following to your `package.json` in the backend directory:
-   ```json
-   "engines": {
-     "node": "18.x"
-   }
-   ```
-4. Deploy using Git:
+1. Build the frontend application:
    ```bash
-   git push heroku main
+   cd Ecommerce-Demo
+   npm run build
    ```
 
-#### Render
-1. Create a new web service
-2. Connect your GitHub repository
-3. Set the build command to:
+2. Create a zip file of the backend directory (which now includes the frontend build in the dist folder):
    ```bash
-   cd Ecommerce-Demo && npm install && npm run build
+   cd ../ecommerce-backend
+   zip -r ecommerce-app.zip . -x "node_modules/*" "dist/assets/*.map" "*.git*"
    ```
-4. Set the start command to:
-   ```bash
-   cd ecommerce-backend && npm install && npm start
-   ```
+
+3. Go to the AWS Elastic Beanstalk console
+4. Create a new application
+5. Choose Node.js as the platform
+6. Upload the zip file created in step 2
+7. Configure environment variables if needed
+8. Deploy the application
+
+The application is currently deployed and accessible at:
+[http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/](http://ecommerce-project-react-env.eba-x3amme33.us-east-1.elasticbeanstalk.com/)
 
 ## Live Demo
 
