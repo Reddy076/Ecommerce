@@ -11,6 +11,9 @@ export function CheckoutPage({ cart, loadCart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
+  // Calculate total number of items in the cart
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
   // Fetch delivery options and payment summary when component mounts or cart changes
   useEffect(() => {
     const fetchCheckoutData = async () => {
@@ -40,8 +43,7 @@ export function CheckoutPage({ cart, loadCart }) {
           </div>
 
           <div className="checkout-header-middle-section">
-            Checkout (<a className="return-to-home-link"
-              href="/">3 items</a>)
+            Checkout ({totalItems > 0 ? `Cart Items (${totalItems})` : 'Cart Items'})
           </div>
 
           <div className="checkout-header-right-section">
