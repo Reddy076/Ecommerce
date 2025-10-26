@@ -2,9 +2,12 @@ import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { formatMoney } from '../../utils/money';
 
+// Component to display payment summary and place order button
 export function PaymentSummary({ paymentSummary, loadCart }) {
+  // Hook to navigate between pages
   const navigate = useNavigate();
 
+  // Function to create an order and navigate to orders page
   const createOrder = async () => {
     await axios.post('/api/orders');
     await loadCart();

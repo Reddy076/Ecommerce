@@ -1,7 +1,9 @@
 import { Link } from 'react-router';
 import './header.css';
 
+// Header component that displays the site logo, search bar, and navigation links
 export function Header({ cart }) {
+  // Calculate total quantity of items in the cart
   let totalQuantity = 0;
 
   cart.forEach((cartItem) => {

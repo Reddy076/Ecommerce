@@ -1,5 +1,6 @@
 import { Product } from './Product';
 
+// Component to display a grid of products
 export function ProductsGrid({ products, loadCart }) {
   return (
     <div className="products-grid">

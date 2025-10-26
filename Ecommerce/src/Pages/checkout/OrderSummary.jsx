@@ -3,15 +3,18 @@ import dayjs from 'dayjs';
 import { formatMoney } from '../../utils/money';
 import { DeliveryOptions } from './DeliveryOptions';
 
+// Component to display order summary with cart items and delivery options
 export function OrderSummary({ cart, deliveryOptions, loadCart }) {
   return (
     <div className="order-summary">
       {deliveryOptions.length > 0 && cart.map((cartItem) => {
+        // Find the selected delivery option for this cart item
         const selectedDeliveryOption = deliveryOptions
           .find((deliveryOption) => {
             return deliveryOption.id === cartItem.deliveryOptionId;
           });
 
+        // Function to delete a cart item
         const deleteCartItem = async () => {
           await axios.delete(`/api/cart-items/${cartItem.productId}`);
           await loadCart();

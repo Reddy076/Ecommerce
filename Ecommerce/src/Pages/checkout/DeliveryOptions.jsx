@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import axios from 'axios';
 import { formatMoney } from '../../utils/money';
 
+// Component to display delivery options for a cart item
 export function DeliveryOptions({ cartItem, deliveryOptions, loadCart }) {
   return (
     <div className="delivery-options">
@@ -9,12 +10,14 @@ export function DeliveryOptions({ cartItem, deliveryOptions, loadCart }) {
         Choose a delivery option:
       </div>
       {deliveryOptions.map((deliveryOption) => {
+        // Determine price string based on delivery cost
         let priceString = 'FREE Shipping';
 
         if (deliveryOption.priceCents > 0) {
           priceString = `${formatMoney(deliveryOption.priceCents)} - Shipping`;
         }
 
+        // Function to update delivery option for a cart item
         const updateDeliveryOption = async () => {
           await axios.put(`/api/cart-items/${cartItem.productId}`, {
             deliveryOptionId: deliveryOption.id

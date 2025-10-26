@@ -5,10 +5,13 @@ import { PaymentSummary } from './PaymentSummary';
 import './checkout-header.css';
 import './CheckoutPage.css';
 
+// Checkout page component that displays order summary and payment options
 export function CheckoutPage({ cart, loadCart }) {
+  // State to store delivery options and payment summary data
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
+  // Fetch delivery options and payment summary when component mounts or cart changes
   useEffect(() => {
     const fetchCheckoutData = async () => {
       let response = await axios.get(

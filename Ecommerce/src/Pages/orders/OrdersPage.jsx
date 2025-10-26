@@ -5,9 +5,12 @@ import { Header } from '../../components/Header';
 import { formatMoney } from '../../utils/money';
 import './OrdersPage.css';
 
+// Orders page component that displays a user's order history
 export function OrdersPage({ cart }) {
+  // State to store orders fetched from the backend
   const [orders, setOrders] = useState([]);
 
+  // Fetch orders when component mounts
   useEffect(() => {
     axios.get('/api/orders?expand=products')
       .then((response) => {

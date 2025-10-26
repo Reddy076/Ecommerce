@@ -2,9 +2,12 @@ import axios from 'axios';
 import { useState } from 'react';
 import { formatMoney } from '../../utils/money';
 
+// Component to display a single product with add to cart functionality
 export function Product({ product, loadCart }) {
+  // State to track selected quantity
   const [quantity, setQuantity] = useState(1);
 
+  // Function to add product to cart
   const addToCart = async () => {
     await axios.post('/api/cart-items', {
       productId: product.id,
@@ -13,6 +16,7 @@ export function Product({ product, loadCart }) {
     await loadCart();
   };
 
+  // Function to handle quantity selection
   const selectQuantity = (event) => {
     const quantitySelected = Number(event.target.value);
     setQuantity(quantitySelected);

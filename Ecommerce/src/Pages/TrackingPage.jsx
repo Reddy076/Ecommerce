@@ -1,6 +1,7 @@
 import { Header } from '../components/Header';
 import './TrackingPage.css';
 
+// Tracking page component that displays order tracking information
 export function TrackingPage() {
   return (
     <>

@@ -6,14 +6,18 @@ import { CheckoutPage } from './pages/checkout/CheckoutPage';
 import { OrdersPage } from './pages/orders/OrdersPage';
 import './App.css'
 
+// Main application component that handles routing and cart state
 function App() {
+  // State to store cart items
   const [cart, setCart] = useState([]);
 
+  // Function to load cart data from the backend API
   const loadCart = async () => {
     const response = await axios.get('/api/cart-items?expand=product');
     setCart(response.data);
   };
 
+  // Load cart data when component mounts
   useEffect(() => {
     loadCart();
   }, []);
